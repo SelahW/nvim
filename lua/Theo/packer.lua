@@ -23,6 +23,7 @@ return require('packer').startup(function(use)
 	use('lervag/vimtex')
 	use('tpope/vim-fugitive')
 	use('m4xshen/autoclose.nvim')
+    use('feline-nvim/feline.nvim')
 	use {
 		'nvim-tree/nvim-tree.lua',
 		requires = {

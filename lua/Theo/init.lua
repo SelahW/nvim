@@ -1,5 +1,3 @@
--- disable netrw at the very start of your init.lua
-
 -- OR setup with some options
 require("nvim-tree").setup({
   sort = {
