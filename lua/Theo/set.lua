@@ -25,6 +25,7 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 vim.g.have_nerd_font = true
 vim.opt.inccommand = 'split'
+vim.opt.showmode = false
 -- Highlight on yank
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
