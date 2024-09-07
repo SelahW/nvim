@@ -23,13 +23,9 @@ return require('packer').startup(function(use)
 	use('lervag/vimtex')
 	use('tpope/vim-fugitive')
 	use('m4xshen/autoclose.nvim')
-    use('feline-nvim/feline.nvim')
-	use {
-		'nvim-tree/nvim-tree.lua',
-		requires = {
-			'nvim-tree/nvim-web-devicons', -- optional
-		},
-	}
+    use('nvim-lualine/lualine.nvim')
+	use('nvim-tree/nvim-tree.lua')
+    use('nvim-tree/nvim-web-devicons')
 	-- LSP Prerequisites
 	use('VonHeikemen/lsp-zero.nvim')
 	use('neovim/nvim-lspconfig')
@@ -42,6 +38,5 @@ return require('packer').startup(function(use)
 	use('saadparwaiz1/cmp_luasnip')
 	use('hrsh7th/cmp-nvim-lua')
 	use('L3MON4D3/LuaSnip')
-
 	use('rafamadriz/friendly-snippets')
 end)

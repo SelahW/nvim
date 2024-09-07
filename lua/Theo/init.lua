@@ -20,6 +20,9 @@ require("nvim-tree").setup({
     },
   },
 })
+require('lualine').setup {
+    options = { theme = 'gruvbox' }
+}
 require("Theo.remap")
 require("Theo.packer")
 require("Theo.set")
