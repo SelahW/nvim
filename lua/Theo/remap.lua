@@ -10,10 +10,7 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 -- Open terminal in split buffer.
 vim.keymap.set("n", "<leader>t", "<cmd>vsplit<CR><C-w>l<cmd>terminal<CR>i")
--- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]])
-
--- next greatest remap ever : asbjornHaland
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
