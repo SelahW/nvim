@@ -37,6 +37,6 @@ return require('packer').startup(function(use)
 	use('hrsh7th/cmp-path')
 	use('saadparwaiz1/cmp_luasnip')
 	use('hrsh7th/cmp-nvim-lua')
-	use('L3MON4D3/LuaSnip')
+    use{"L3MON4D3/LuaSnip", run = "make install_jsregexp"}
 	use('rafamadriz/friendly-snippets')
 end)
