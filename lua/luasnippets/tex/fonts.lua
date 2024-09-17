@@ -25,21 +25,15 @@ end
 return {
     -- alpha
     s({trig=";a", snippetType="autosnippet"},
-    fmta(
-    "\\alpha"
-    ),
+    t("\\alpha"),
     {condition=in_mathzone}),
     -- beta
     s({trig=";b", snippetType="autosnippet"},
-    fmta(
-    "\\beta"
-    ),
+    t("\\beta"),
     {condition=in_mathzone}),
     -- gamma
     s({trig=";g", snippetType="autosnippet"},
-    fmta(
-    "\\gamma"
-    ),
+    t("\\gamma"),
     {condition=in_mathzone}),
     s({trig = "tii", snippetType="autosnippet", dscr = "Expands 'tii' into LaTeX's textit{} command."},
     fmta("\\textit{<>}",
