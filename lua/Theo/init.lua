@@ -31,3 +31,10 @@ require("autoclose").setup({
       ["$"] = { escape = true, close = true, pair = "$$", disabled_filetypes = {} },
    },
 })
+require("luasnip").config.set_config({
+    -- Auto snippets
+    enable_autosnippets = true,
+    store_selection_keys = "<Tab>",
+    update_events = 'TextChanged,TextChangedI',
+})
+require("luasnip.loaders.from_lua").lazy_load({paths = "~/.config/nvim/lua/luasnippets/"})
