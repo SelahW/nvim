@@ -36,6 +36,15 @@ return {
         i(2)
     })
     ),
+    -- Another inline math
+    s({trig="$$", snippetType="autosnippet"},
+    fmta(
+    "\\(<>\\) <>",
+    {
+        i(1),
+        i(2)
+    })
+    ),
     -- Display math
     s({trig="dm", snippetType="autosnippet"},
     fmta([[
