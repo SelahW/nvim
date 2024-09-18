@@ -37,7 +37,7 @@ return {
     })
     ),
     -- Another inline math
-    s({trig="$$", snippetType="autosnippet"},
+    s({trig="$", snippetType="autosnippet"},
     fmta(
     "\\(<>\\) <>",
     {

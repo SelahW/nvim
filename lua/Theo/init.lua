@@ -26,11 +26,7 @@ require('lualine').setup {
 require("Theo.remap")
 require("Theo.packer")
 require("Theo.set")
-require("autoclose").setup({
-   keys = {
-      ["$"] = { escape = true, close = true, pair = "$$", disabled_filetypes = {} },
-   },
-})
+require("autoclose")
 require("luasnip").config.set_config({
     -- Auto snippets
     enable_autosnippets = true,
