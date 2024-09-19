@@ -35,19 +35,17 @@ return {
     s({trig=";g", snippetType="autosnippet"},
     t("\\gamma"),
     {condition=in_mathzone}),
-    s({trig = "tii", snippetType="autosnippet", dscr = "Expands 'tii' into LaTeX's textit{} command."},
+    -- Italicize
+    s({trig = "tii", snippetType="autosnippet", dscr = "Expands 'tii' into textit{}"},
     fmta("\\textit{<>}",
     {
         d(1, get_visual),
-    }
-    )
-    ),
-    s({trig = "bf", snippetType="autosnippet", dscr = "Expands 'bf' into LaTeX's textbf{} command."},
+    })),
+    -- Bold
+    s({trig = "bf", snippetType="autosnippet", dscr = "Expands 'bf' into textbf{}"},
     fmta("\\textbf{<>}",
     {
         d(1, get_visual),
-    }
-    )
-    )
+    }))
 }
 

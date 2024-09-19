@@ -28,15 +28,6 @@ return {
     {condition = in_mathzone}
     ),
     -- Inline math
-    s({trig="mm", snippetType="autosnippet"},
-    fmta(
-    "\\(<>\\) <>",
-    {
-        i(1),
-        i(2)
-    })
-    ),
-    -- Another inline math
     s({trig="$", snippetType="autosnippet"},
     fmta(
     "\\(<>\\) <>",
@@ -57,7 +48,7 @@ return {
         i(2)
     })
     ),
-    -- Align stuff
+    -- Align entry
     s({trig="==", snippetType="autosnippet"},
     fmta([[
     &<> <> \\
@@ -67,34 +58,24 @@ return {
         i(2)
     }),
     {condition = in_align}),
-    -- Matrix
-    s({trig="mat", snippetType="autosnippet"},
+    -- Underscore
+    s({trig="_", wordTrig = false, snippetType="autosnippet"},
     fmta([[
-    \begin{bmatrix}
-    <> & <> \\
-    <> & <> \\
-    \end{bmatrix}
+    _{<>}<>
     ]],
     {
         i(1),
-        i(2),
-        i(3),
-        i(4)
+        i(2)
     }),
     {condition = in_mathzone}),
-    -- Cases
-    s({trig="cas", snippetType="autosnippet"},
+    -- Superscript
+    s({trig="^", wordTrig = false, snippetType="autosnippet"},
     fmta([[
-    \begin{cases}
-    <> & \text{if <>}\\
-    <> & \text{if <>}\\
-    \end{cases}
+    ^{<>}<>
     ]],
     {
         i(1),
-        i(2),
-        i(3),
-        i(4)
+        i(2)
     }),
     {condition = in_mathzone})
 }
