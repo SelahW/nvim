@@ -26,7 +26,7 @@ require('lualine').setup {
 require("Theo.remap")
 require("Theo.packer")
 require("Theo.set")
-require("autoclose")
+require("autoclose").setup()
 require("luasnip").config.set_config({
     -- Auto snippets
     enable_autosnippets = true,
