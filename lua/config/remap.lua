@@ -7,7 +7,7 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
-
+vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
 -- Open terminal in split buffer
 vim.keymap.set("n", "<leader>t", "<cmd>vsplit<CR><C-w>l<cmd>terminal<CR>i")
 -- Paste without overwriting register
@@ -40,3 +40,17 @@ imap <silent><expr> jk luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-j
 vim.cmd[[
 smap <silent><expr> jk luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : 'jk'
 ]]
+-- Nvimtree
+local nvimTreeFocusOrToggle = function ()
+	local nvimTree=require("nvim-tree.api")
+	local currentBuf = vim.api.nvim_get_current_buf()
+	local currentBufFt = vim.api.nvim_get_option_value("filetype", { buf = currentBuf })
+	if currentBufFt == "NvimTree" then
+		nvimTree.tree.toggle()
+	else
+		nvimTree.tree.focus()
+	end
+end
+
+
+vim.keymap.set("n", "<C-n>", nvimTreeFocusOrToggle)
