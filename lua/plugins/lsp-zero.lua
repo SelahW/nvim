@@ -26,6 +26,17 @@ return {
         local cmp = require('cmp')
         local cmp_select = {behavior = cmp.SelectBehavior.Select}
 
+        require('mason').setup()
+        require('mason-lspconfig').setup({
+            ensure_installed = {'texlab', 'hls', 'julials', 'lua_ls'},
+            handlers = {
+                lsp_zero.default_setup,
+                lua_ls = function()
+                    local lua_opts = lsp_zero.nvim_lua_ls()
+                    require('lspconfig').lua_ls.setup(lua_opts)
+                end,
+            }
+        })
         cmp.setup({
             sources = {
                 {name = 'path'},
