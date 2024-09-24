@@ -61,21 +61,19 @@ return {
     -- Underscore
     s({trig="_", wordTrig = false, snippetType="autosnippet"},
     fmta([[
-    _{<>}<>
+    _{<>}
     ]],
     {
-        i(1),
-        i(2)
+        i(1)
     }),
     {condition = in_mathzone}),
     -- Superscript
     s({trig="^", wordTrig = false, snippetType="autosnippet"},
     fmta([[
-    ^{<>}<>
+    ^{<>}
     ]],
     {
-        i(1),
-        i(2)
+        i(1)
     }),
     {condition = in_mathzone})
 }
