@@ -51,6 +51,10 @@ local nvimTreeFocusOrToggle = function ()
 		nvimTree.tree.focus()
 	end
 end
+vim.api.nvim_set_keymap("i", "<C-l>", "<Plug>luasnip-next-choice", {})
+vim.api.nvim_set_keymap("s", "<C-l>", "<Plug>luasnip-next-choice", {})
+vim.api.nvim_set_keymap("i", "<C-h>", "<Plug>luasnip-prev-choice", {})
+vim.api.nvim_set_keymap("s", "<C-h>", "<Plug>luasnip-prev-choice", {})
 
-
+ vim.api.nvim_set_keymap('i', '<C-u>', '<cmd>lua require("luasnip.extras.select_choice")()<cr>', { noremap = true })
 vim.keymap.set("n", "<C-n>", nvimTreeFocusOrToggle)

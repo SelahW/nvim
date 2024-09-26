@@ -5,7 +5,8 @@ local sn = ls.snippet_node
 local t = ls.text_node
 local i = ls.insert_node
 local f = ls.function_node
-local d = ls.dynamic_node
+local d = ls.dynamic_nod 
+local c = ls.choice_node
 local fmt = require("luasnip.extras.fmt").fmt
 local fmta = require("luasnip.extras.fmt").fmta
 local rep = require("luasnip.extras").rep
@@ -74,6 +75,24 @@ return {
     ]],
     {
         i(1)
+    }),
+    {condition = in_mathzone}),
+    -- Sum
+    s({trig="ss", snippetType="autosnippet"},
+    fmta([[
+    \sum_{<>=<>}^{<>}
+    ]],
+    {
+	c(1,{t("n"),t("i")}), c(2, {t("0"),t("1")}), c(3, {t("\\infty"), t("k"),t("m")})
+    }),
+    {condition = in_mathzone}),
+    -- Limit, Limsup, Liminf
+    s({trig="ll", snippetType="autosnippet"},
+    fmta([[
+    \lim<>_{n\to\infty}<>
+    ]],
+    {
+    c(1,{t(""),t("sup"),t("inf")}), i(2)
     }),
     {condition = in_mathzone})
 }
