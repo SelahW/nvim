@@ -1,4 +1,11 @@
 return {
     "NeogitOrg/neogit",
-    config = true
+    dependencies = {
+        "sindrets/diffview.nvim"
+    },
+    config = true,
+    opts = {
+        graph_style = "kitty",
+        kind = "auto"
+    }
 }
