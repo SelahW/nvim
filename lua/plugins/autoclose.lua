@@ -1,6 +1,4 @@
 return{
     'm4xshen/autoclose.nvim',
-    config = function()
-        require("autoclose").setup()
-    end,
+    opts = { options = {disable_when_touch = true}},
 }

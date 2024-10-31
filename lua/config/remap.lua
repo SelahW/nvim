@@ -34,27 +34,22 @@ vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
 -- Map jk to expand or jump through snippets
-vim.cmd[[
-imap <silent><expr> jk luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : 'jk' 
+vim.cmd [[
+imap <silent><expr> jk luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : 'jk'
 ]]
-vim.cmd[[
+vim.cmd [[
 smap <silent><expr> jk luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : 'jk'
 ]]
--- Nvimtree
-local nvimTreeFocusOrToggle = function ()
-	local nvimTree=require("nvim-tree.api")
-	local currentBuf = vim.api.nvim_get_current_buf()
-	local currentBufFt = vim.api.nvim_get_option_value("filetype", { buf = currentBuf })
-	if currentBufFt == "NvimTree" then
-		nvimTree.tree.toggle()
-	else
-		nvimTree.tree.focus()
-	end
-end
+-- Luasnip Settings``
 vim.api.nvim_set_keymap("i", "<C-l>", "<Plug>luasnip-next-choice", {})
 vim.api.nvim_set_keymap("s", "<C-l>", "<Plug>luasnip-next-choice", {})
 vim.api.nvim_set_keymap("i", "<C-h>", "<Plug>luasnip-prev-choice", {})
 vim.api.nvim_set_keymap("s", "<C-h>", "<Plug>luasnip-prev-choice", {})
-
- vim.api.nvim_set_keymap('i', '<C-u>', '<cmd>lua require("luasnip.extras.select_choice")()<cr>', { noremap = true })
-vim.keymap.set("n", "<C-n>", nvimTreeFocusOrToggle)
+vim.api.nvim_set_keymap('i', '<C-u>', '<cmd>lua require("luasnip.extras.select_choice")()<cr>', { noremap = true })
+-- Telescope
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<leader>fg', builtin.git_files, {})
+vim.keymap.set('n', '<leader>gg', builtin.live_grep, {})
+-- Undotree
+vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
