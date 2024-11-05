@@ -31,7 +31,7 @@ return {
     -- Inline math
     s({trig="$", snippetType="autosnippet"},
     fmta(
-    "\\(<>\\) <>",
+    "\\(<>\\)<>",
     {
         i(1),
         i(2)
@@ -52,7 +52,7 @@ return {
     -- Align entry
     s({trig="==", snippetType="autosnippet"},
     fmta([[
-    &<> <> \\
+    <>&<>\\
     ]],
     {
         i(1),

@@ -21,12 +21,18 @@ return {
     s({trig="ali", snippetType = "autosnippet", dscr="Expands 'ali' into an align* environment"},
     fmta([[
     \begin{align*}
-    &<> <>\\
+    <>&<>\\
+    <>&<>\\
+    <>&<>\\
     \end{align*}
     ]],
     {
         i(1),
-        i(2)
+        i(2),
+        i(3),
+        rep(2),
+        i(4),
+        rep(2)
     }),
     {condition=in_text}),
     -- Arbitrary environment
@@ -40,6 +46,17 @@ return {
         i(1),
         i(2),
         rep(1)  -- repeats insert node i(1)
+    }),
+    {condition=in_text}),
+    -- Example
+    s({trig="exm", snippetType="autosnippet"},
+    fmta([[
+    \begin{example}
+    <>
+    \end{example}
+    ]],
+    {
+        i(1),
     }),
     {condition=in_text}),
     -- Itemize
@@ -110,7 +127,7 @@ return {
     }),
     {condition=in_text}),
     -- Matrix
-    s({trig="mat", snippetType="autosnippet"},
+    s({trig="matr", snippetType="autosnippet"},
     fmta([[
     \begin{bmatrix}
     <> & <> \\

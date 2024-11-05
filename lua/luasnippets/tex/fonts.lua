@@ -35,6 +35,18 @@ return {
     s({trig=";g", snippetType="autosnippet"},
     t("\\gamma"),
     {condition=in_mathzone}),
+    -- sigma
+    s({trig=";s", snippetType="autosnippet"},
+    t("\\sigma"),
+    {condition=in_mathzone}),
+    -- theta
+    s({trig=";t", snippetType="autosnippet"},
+    t("\\theta"),
+    {condition=in_mathzone}),
+    -- epsilon
+    s({trig=";e", snippetType="autosnippet"},
+    t("\\varepsilon"),
+    {condition=in_mathzone}),
     -- Italicize
     s({trig = "tii", snippetType="autosnippet", dscr = "Expands 'tii' into textit{}"},
     fmta("\\textit{<>}",
