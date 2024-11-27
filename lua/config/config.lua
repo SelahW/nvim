@@ -7,7 +7,7 @@ vim.g.gruvbox_material_foreground = 'mix'
 vim.g.gruvbox_material_better_performance = 1
 vim.g.gruvbox_material_visual = 'green background'
 vim.cmd.colorscheme('gruvbox-material')
--- VimTeX Settings
+-- VimTeX
 vim.g.vimtex_compiler_latexmk = {
     aux_dir = function()
         return vim.fn.expand('%:t:r') .. "aux"
@@ -15,6 +15,7 @@ vim.g.vimtex_compiler_latexmk = {
 }
 vim.g.vimtex_view_method = 'zathura'
 vim.g.vimtex_zathura_options = '--fork'
+vim.o.conceallevel = 2
 -- NvimTree
 local nvimTreeFocusOrToggle = function()
     local nvimTree = require("nvim-tree.api")
@@ -117,6 +118,7 @@ require("luasnip").config.set_config({
 -- Treesitter
 require'nvim-treesitter.configs'.setup {
     -- A list of parser names, or "all" (the five listed parsers should always be installed)
+    ignore_install = { "latex" },
     ensure_installed = {"julia", "python", "c", "lua", "vim", "vimdoc", "query", "haskell"},
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
@@ -128,11 +130,9 @@ require'nvim-treesitter.configs'.setup {
 
     highlight = {
         enable = true,
-
         -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
         -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
         -- Using this option may slow down your editor, and you may see some duplicate highlights.
         -- Instead of true it can also be a list of languages
-        additional_vim_regex_highlighting = {"latex"},
     },
 }
