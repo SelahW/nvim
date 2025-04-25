@@ -1,6 +1,6 @@
 return {
     'nvim-lualine/lualine.nvim',
     opts = {
-        options = {theme = 'gruvbox-material'}
+        options = {theme = 'everforest'}
     }
 }

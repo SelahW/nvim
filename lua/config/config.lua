@@ -1,12 +1,5 @@
 -- Nerd font
 vim.g.have_nerd_font = true
--- Colorscheme Setup
-vim.g.gruvbox_material_enable_italic = true
-vim.g.gruvbox_material_background = 'medium'
-vim.g.gruvbox_material_foreground = 'mix'
-vim.g.gruvbox_material_better_performance = 1
-vim.g.gruvbox_material_visual = 'green background'
-vim.cmd.colorscheme('gruvbox-material')
 -- VimTeX
 vim.g.vimtex_compiler_latexmk = {
     aux_dir = function()
@@ -15,7 +8,6 @@ vim.g.vimtex_compiler_latexmk = {
 }
 vim.g.vimtex_view_method = 'zathura'
 vim.g.vimtex_zathura_options = '--fork'
-vim.o.conceallevel = 2
 -- NvimTree
 local nvimTreeFocusOrToggle = function()
     local nvimTree = require("nvim-tree.api")
@@ -42,24 +34,6 @@ vim.keymap.set("n", "<C-l>", function() harpoon:list():select(4) end)
 -- Toggle previous & next buffers stored within Harpoon list
 vim.keymap.set("n", "<C-S-P>", function() harpoon:list():prev() end)
 vim.keymap.set("n", "<C-S-N>", function() harpoon:list():next() end)
--- Telescope + Harpoon
-local conf = require("telescope.config").values
-local function toggle_telescope(harpoon_files)
-    local file_paths = {}
-    for _, item in ipairs(harpoon_files.items) do
-        table.insert(file_paths, item.value)
-    end
-    require("telescope.pickers").new({}, {
-        prompt_title = "Harpoon",
-        finder = require("telescope.finders").new_table({
-            results = file_paths,
-        }),
-        previewer = conf.file_previewer({}),
-        sorter = conf.generic_sorter({}),
-    }):find()
-end
-vim.keymap.set("n", "<C-e>", function() toggle_telescope(harpoon:list()) end,
-{ desc = "Open harpoon window" })
 -- LSP Setup
 local lsp_zero = require('lsp-zero')
 
