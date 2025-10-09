@@ -7,16 +7,16 @@ return {
         sort = {sorter = "case_sensitive"},
         view = {width = 30, side = "right"},
         renderer = {
-                indent_markers = {
-                    enable = true
-                },
-                group_empty = true,
-                highlight_git = true,
-                icons = {
-                    show = {
-                        git = true,
-                    }
+            indent_markers = {
+                enable = true
+            },
+            group_empty = true,
+            highlight_git = true,
+            icons = {
+                show = {
+                    git = true,
                 }
             }
         }
     }
+}

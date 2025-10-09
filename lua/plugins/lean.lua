@@ -5,8 +5,4 @@ return {
         'neovim/nvim-lspconfig',
         'nvim-lua/plenary.nvim',
     },
-    opts = {
-        lsp = {},
-        mappings = true
-    }
 }

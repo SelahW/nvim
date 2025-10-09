@@ -1,4 +1,4 @@
 return {
-	'theprimeagen/harpoon',
+    'theprimeagen/harpoon',
     branch = "harpoon2"
 }
