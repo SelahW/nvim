@@ -7,7 +7,7 @@ vim.g.vimtex_compiler_latexmk = {
         return vim.fn.expand('%:t:r') .. "aux"
     end
 }
-vim.g.vimtex_view_method = 'zathura'
+vim.g.vimtex_view_method = 'zathura_simple'
 vim.g.vimtex_zathura_options = '--fork'
 
 -- NvimTree
@@ -64,23 +64,11 @@ require("luasnip").config.set_config({
     update_events = 'TextChanged,TextChangedI',
 })
 -- Treesitter
-require 'nvim-treesitter.configs'.setup {
-    -- A list of parser names, or "all" (the five listed parsers should always be installed)
+require 'nvim-treesitter.config'.setup {
     ignore_install = { "latex" },
     ensure_installed = { "julia", "python", "c", "lua", "vim", "vimdoc", "query", "haskell" },
-
-    -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = false,
-
     -- Automatically install missing parsers when entering buffer
-    -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
     auto_install = false,
-
-    highlight = {
-        enable = true,
-        -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-        -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-        -- Using this option may slow down your editor, and you may see some duplicate highlights.
-        -- Instead of true it can also be a list of languages
-    },
+    highlight = { enable = true, },
 }

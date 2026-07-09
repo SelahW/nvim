@@ -56,10 +56,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- Setup Lazy
 require("lazy").setup({
     spec = {
-        -- import your plugins
         { import = "plugins" },
     },
-    -- automatically check for plugin updates
     checker = { enabled = true, notify = false},
 })
 require("config.init")
